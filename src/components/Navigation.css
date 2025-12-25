@@ -52,7 +52,7 @@
 .logo-text {
     display: flex;
     align-items: baseline;
-    gap: var(--spacing-sm);
+    gap: var(--spacing-xs);
 }
 
 .logo-text .gradient-text {
@@ -179,6 +179,10 @@
     }
 
     .logo-text .gradient-text {
-        font-size: var(--text-xl);
+        font-size: var(--text-lg);
+    }
+
+    .logo-subtitle {
+        font-size: var(--text-xs);
     }
 }
