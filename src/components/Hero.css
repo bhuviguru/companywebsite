@@ -75,8 +75,13 @@
     position: relative;
     z-index: 2;
     text-align: center;
+    /* Enforce center alignment */
     max-width: 900px;
     margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    /* Enforce center alignment for flex items of cta */
 }
 
 /* Badge */
@@ -84,34 +89,39 @@
     display: inline-flex;
     align-items: center;
     gap: var(--spacing-xs);
-    padding: var(--spacing-xs) var(--spacing-md);
-    background: var(--glass-bg);
+    padding: 0.5rem 1.25rem;
+    background: rgba(255, 255, 255, 0.05);
+    /* Softer glass */
     backdrop-filter: blur(var(--glass-blur));
     border: 1px solid var(--glass-border);
-    border-radius: 50px;
+    border-radius: var(--border-radius-full);
     font-size: var(--text-sm);
     font-weight: 600;
     color: var(--color-text-secondary);
     margin-bottom: var(--spacing-lg);
+    box-shadow: var(--shadow-sm);
 }
 
 .badge-icon {
-    font-size: var(--text-lg);
+    font-size: var(--text-base);
+    color: var(--color-accent-cyan);
 }
 
 /* Title */
 .hero-title {
     font-size: var(--text-7xl);
-    font-weight: 900;
+    font-weight: 800;
+    /* Standard bold */
     line-height: 1.1;
-    margin-bottom: var(--spacing-lg);
-    letter-spacing: -0.03em;
+    margin-bottom: var(--spacing-md);
+    /* Tighter spacing */
+    letter-spacing: -0.02em;
 }
 
 .hero-subtitle {
     font-size: var(--text-4xl);
     color: var(--color-text-secondary);
-    font-weight: 600;
+    font-weight: 500;
 }
 
 /* Description */
@@ -119,7 +129,8 @@
     font-size: var(--text-xl);
     color: var(--color-text-secondary);
     margin-bottom: var(--spacing-xl);
-    line-height: 1.8;
+    line-height: 1.6;
+    max-width: 700px;
 }
 
 /* CTA Buttons */
@@ -129,6 +140,7 @@
     justify-content: center;
     margin-bottom: var(--spacing-2xl);
     flex-wrap: wrap;
+    width: 100%;
 }
 
 /* Stats */
@@ -145,6 +157,7 @@
     max-width: 600px;
     margin: 0 auto;
     margin-top: var(--spacing-3xl);
+    box-shadow: var(--shadow-lg);
 }
 
 .stat {

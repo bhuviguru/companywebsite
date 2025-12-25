@@ -56,7 +56,7 @@
     padding: var(--spacing-xs) var(--spacing-md);
     background: var(--glass-bg);
     border: 1px solid var(--glass-border);
-    border-radius: 50px;
+    border-radius: var(--border-radius-full);
     font-size: var(--text-sm);
     color: var(--color-text-secondary);
 }
