@@ -103,7 +103,8 @@
 .hero-title {
     font-size: var(--text-7xl);
     font-weight: 900;
-    line-height: 1.1;
+    line-height: 1.3;
+    margin-top: 16px;
     margin-bottom: var(--spacing-lg);
     letter-spacing: -0.03em;
 }
@@ -115,7 +116,8 @@
     font-weight: 600;
     letter-spacing: 0.05em;
     margin-top: var(--spacing-md);
-    line-height: normal;
+    margin-bottom: 24px;
+    line-height: 1.6;
 }
 
 /* Description */
