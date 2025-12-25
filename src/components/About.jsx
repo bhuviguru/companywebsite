@@ -1,83 +1,96 @@
 import { motion } from 'framer-motion';
 import { useInView } from 'framer-motion';
 import { useRef } from 'react';
+
 import './About.css';
 
 const About = () => {
     const ref = useRef(null);
     const isInView = useInView(ref, { once: true, margin: '-100px' });
 
-    const containerVariants = {
-        hidden: { opacity: 0 },
-        visible: {
-            opacity: 1,
-            transition: {
-                staggerChildren: 0.2,
-            },
-        },
-    };
-
-    const itemVariants = {
-        hidden: { opacity: 0, y: 30 },
-        visible: {
-            opacity: 1,
-            y: 0,
-            transition: { duration: 0.6, ease: 'easeOut' },
-        },
-    };
-
     return (
         <section className="about section" id="about" ref={ref}>
             <div className="container">
+                {/* Intro Section */}
                 <motion.div
-                    variants={containerVariants}
-                    initial="hidden"
-                    animate={isInView ? 'visible' : 'hidden'}
+                    className="about-intro"
+                    initial={{ opacity: 0, y: 30 }}
+                    animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
+                    transition={{ duration: 0.6 }}
                 >
-                    {/* Section Header */}
-                    <motion.div className="section-header" variants={itemVariants}>
-                        <h2 className="section-title">
-                            Who <span className="gradient-text">We Are</span>
-                        </h2>
-                        <p className="section-description">
-                            Building the future through research, innovation, and execution
-                        </p>
-                    </motion.div>
+                    <div className="card-icon">💡</div>
+                    <h2 className="section-title">
+                        Who <span className="gradient-text">We Are</span>
+                    </h2>
+                    <p className="section-description">
+                        Building the future through research, innovation, and Automation
+                    </p>
 
-                    {/* About Content */}
-                    <motion.div className="about-content" variants={itemVariants}>
-                        <div className="glass-card about-intro">
-                            <div className="card-icon">💡</div>
-                            <h3>Vyphera Groups R&D Pvt.Ltd</h3>
-                            <p>
-                                A technology and innovation-focused organization operating at the intersection of research, development, and real-world problem solving. Our objective is to transform ideas into scalable, industry-ready digital products through continuous learning, experimentation, and execution.
-                            </p>
-                        </div>
-                    </motion.div>
-
-                    {/* Mission & Vision */}
-                    <motion.div className="mission-vision grid-2" variants={itemVariants}>
-                        <div className="glass-card card-hover">
-                            <div className="card-header">
-                                <div className="card-icon gradient-bg-primary">🚀</div>
-                                <h3>Our Mission</h3>
-                            </div>
-                            <p>
-                                To design and deliver reliable, efficient, and innovative technology solutions that create meaningful value for industries, students, and society — driven by research, curiosity, and execution.
-                            </p>
-                        </div>
-
-                        <div className="glass-card card-hover">
-                            <div className="card-header">
-                                <div className="card-icon gradient-bg-secondary">📈</div>
-                                <h3>Our Vision</h3>
-                            </div>
-                            <p>
-                                To evolve as a trusted R&D-oriented startup that bridges the gap between academic learning and industry-grade technology, while fostering a strong culture of innovation and problem-solving.
-                            </p>
-                        </div>
-                    </motion.div>
+                    <h3>Vyphera Groups R&D Pvt.Ltd</h3>
+                    <p>
+                        A technology and innovation-focused organization operating at the intersection of research, development, and real-world problem solving. Our objective is to transform ideas into scalable, industry-ready digital products through continuous learning, experimentation, and Automation.
+                    </p>
                 </motion.div>
+
+                {/* Mission & Vision Split Layout */}
+                <div className="mission-vision-container">
+                    {/* Vision Row - Text Left | Image Right */}
+                    <motion.div
+                        className="split-row"
+                        initial={{ opacity: 0, x: -50 }}
+                        whileInView={{ opacity: 1, x: 0 }}
+                        viewport={{ once: true }}
+                        transition={{ duration: 0.6 }}
+                    >
+                        <div className="split-text">
+                            <div className="card-header">
+                                <h3 className="card-title">Our Vision</h3>
+                            </div>
+                            <p>
+                                To build a globally impactful ecosystem where automation and research-driven innovation eliminate manual inefficiencies and empower students, farmers, and businesses across multiple domains.
+                            </p>
+                        </div>
+                        <div className="split-image vision-visualization">
+                            <div className="vision-core">
+                                <div className="scanner-line"></div>
+                                <div className="vision-eye">
+                                    <div className="eye-pupil"></div>
+                                </div>
+                                <div className="vision-ring ring-outer"></div>
+                                <div className="vision-ring ring-inner"></div>
+                                <div className="core-particles"></div>
+                            </div>
+                            <div className="image-overlay gradient-secondary-overlay"></div>
+                        </div>
+                    </motion.div>
+
+                    {/* Mission Row - Image Left | Text Right (Row Reverse) */}
+                    <motion.div
+                        className="split-row reverse"
+                        initial={{ opacity: 0, x: 50 }}
+                        whileInView={{ opacity: 1, x: 0 }}
+                        viewport={{ once: true }}
+                        transition={{ duration: 0.6, delay: 0.2 }}
+                    >
+                        <div className="split-text">
+                            <div className="card-header">
+                                <h3 className="card-title">Our Mission</h3>
+                            </div>
+                            <p>
+                                To design and deliver accurate, scalable, and AI-powered automation solutions that simplify complex processes, reduce manual effort, and create meaningful, real-world impact across education, agriculture, and business sectors.
+                            </p>
+                        </div>
+                        <div className="split-image mission-visualization">
+                            <div className="automation-core">
+                                <div className="gear gear-large"></div>
+                                <div className="gear gear-medium"></div>
+                                <div className="gear gear-small"></div>
+                                <div className="core-particles"></div>
+                            </div>
+                            <div className="image-overlay gradient-primary-overlay"></div>
+                        </div>
+                    </motion.div>
+                </div>
             </div>
         </section>
     );

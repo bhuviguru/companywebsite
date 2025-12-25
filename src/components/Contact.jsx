@@ -44,10 +44,12 @@ const Contact = () => {
                 setStatus({ submitting: false, submitted: false, error: null });
             }, 5000);
         } catch (error) {
+            console.error('Contact Error:', error);
+            const errorMessage = error.response?.data?.message || error.message || 'Failed to send message.';
             setStatus({
                 submitting: false,
                 submitted: false,
-                error: 'Failed to send message. Please try again.',
+                error: errorMessage,
             });
         }
     };
@@ -56,7 +58,7 @@ const Contact = () => {
         { icon: HiMail, label: 'Email', href: 'mailto:vypheragrups2025@gmail.com' },
         { icon: FaLinkedin, label: 'LinkedIn', href: 'https://www.linkedin.com/company/vyphera-groups' },
         { icon: FaGithub, label: 'GitHub', href: 'https://github.com/vypheragroups-pvt' },
-        { icon: FaXTwitter, label: 'X (Twitter)', href: '#' },
+        { icon: FaXTwitter, label: 'Twitter', href: 'https://x.com/VYPHERA_GROUPS_' },
     ];
 
     return (
@@ -69,7 +71,7 @@ const Contact = () => {
                     animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
                     transition={{ duration: 0.6 }}
                 >
-                    <h2 className="section-title">Get In Touch</h2>
+                    <h2 className="section-title">Get in Touch</h2>
                     <p className="section-description">
                         If you require consultancy services, please fill out this form.<br />
                         All the information you provide will be securely sent to Vyphera Groups for further communication and assistance.
@@ -205,15 +207,17 @@ const Contact = () => {
                         </div>
 
                         <div className="glass-card info-card">
-                            <h3>Vyphera Groups R&D</h3>
+                            <h3>Vyphera Groups</h3>
                             <p className="tagline">
-                                <span className="gradient-text">Building, Learning, Evolving</span>
-                                <br />
-                                One step at a time.
+                                <span className="gradient-text">Driven by Curiosity, Built with Purpose</span>
                             </p>
                             <div className="info-detail">
                                 <span className="info-icon">🚀</span>
                                 <span>Research-Driven Innovation</span>
+                            </div>
+                            <div className="info-detail">
+                                <span className="info-icon">⚙️</span>
+                                <span>Strategic Tech Consultancy</span>
                             </div>
                             <div className="info-detail">
                                 <span className="info-icon">💡</span>

@@ -1,7 +1,11 @@
 .contact {
-    background: linear-gradient(180deg,
-            var(--color-bg-secondary) 0%,
-            var(--color-bg-primary) 100%);
+    position: relative;
+}
+
+.contact .section-description {
+    max-width: 900px;
+    margin: 0 auto var(--spacing-2xl);
+    padding: 0 var(--spacing-md);
 }
 
 .contact-content {
@@ -121,6 +125,7 @@
 .tagline {
     font-size: var(--text-lg);
     font-style: italic;
+    margin-bottom: var(--spacing-md) !important;
 }
 
 /* Social Links */
@@ -172,7 +177,7 @@
     display: flex;
     align-items: center;
     gap: var(--spacing-sm);
-    padding: var(--spacing-sm) 0;
+    padding: var(--spacing-xs) 0;
     color: var(--color-text-secondary);
     font-size: var(--text-base);
 }

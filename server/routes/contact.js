@@ -1,4 +1,6 @@
 const express = require('express');
+const fs = require('fs');
+const path = require('path');
 const router = express.Router();
 const { body, validationResult } = require('express-validator');
 const Contact = require('../models/Contact');
@@ -193,9 +195,15 @@ router.post('/', contactValidation, async (req, res) => {
         });
     } catch (error) {
         console.error('Contact submission error:', error);
+
+        // Log to file for debugging
+        const logEntry = `[${new Date().toISOString()}] Error: ${error.message}\nStack: ${error.stack}\n\n`;
+        fs.appendFileSync(path.join(__dirname, '../server_error.log'), logEntry);
+
         res.status(500).json({
             success: false,
             message: 'Failed to save message. Please try again later.',
+            error: process.env.NODE_ENV === 'development' ? error.message : undefined
         });
     }
 });

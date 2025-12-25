@@ -35,12 +35,8 @@ const Footer = () => {
                             </div>
                         </div>
                         <p className="footer-tagline">
-                            We are building, learning, and evolving — one step at a time.
+                            Driven by Curiosity, Built with Purpose.
                         </p>
-                        <div className="footer-badge">
-                            <span>🚀</span>
-                            <span>This is just the beginning</span>
-                        </div>
                     </div>
 
                     {/* Quick Links */}
@@ -67,7 +63,7 @@ const Footer = () => {
 
                     {/* Focus Domains */}
                     <div className="footer-section">
-                        <h4 className="footer-heading">Focus Domains</h4>
+                        <h4 className="footer-heading">Focused Domains</h4>
                         <ul className="footer-list">
                             {domains.map((domain, index) => (
                                 <li key={index}>{domain}</li>
@@ -91,7 +87,7 @@ const Footer = () => {
                             <a href="https://github.com/vypheragroups-pvt" target="_blank" rel="noopener noreferrer" className="social-icon-link" aria-label="GitHub">
                                 <FaGithub />
                             </a>
-                            <a href="#" className="social-icon-link" aria-label="X (Twitter)">
+                            <a href="https://x.com/VYPHERA_GROUPS_" target="_blank" rel="noopener noreferrer" className="social-icon-link" aria-label="X (Twitter)">
                                 <FaXTwitter />
                             </a>
                         </div>
@@ -105,9 +101,7 @@ const Footer = () => {
                         <p className="footer-copyright">
                             © {currentYear} Vyphera Groups R&D Pvt.Ltd. All rights reserved.
                         </p>
-                        <p className="footer-built">
-                            Built with <span className="gradient-text">❤️</span> and cutting-edge tech
-                        </p>
+
                     </div>
                 </div>
             </div>
