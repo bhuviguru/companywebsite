@@ -53,7 +53,7 @@ const Navigation = () => {
 
   return (
     <motion.nav
-      className={`navigation ${isScrolled ? 'scrolled' : ''} `}
+      className={`navigation ${isScrolled ? 'scrolled' : ''} ${isMobileMenuOpen ? 'mobile-open' : ''}`}
       initial={{ y: -100 }}
       animate={{ y: 0 }}
       transition={{ duration: 0.5, ease: 'easeOut' }}

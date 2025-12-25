@@ -505,6 +505,28 @@
         align-items: flex-start;
     }
 
+    .split-row,
+    .split-row.reverse {
+        flex-direction: column;
+        text-align: center;
+        gap: var(--spacing-lg);
+    }
+
+    .card-header {
+        align-items: center;
+        justify-content: center;
+    }
+
+    .split-image {
+        width: 100%;
+        height: auto;
+        min-height: 250px;
+    }
+
+    .split-text {
+        text-align: center;
+    }
+
     .values {
         grid-template-columns: 1fr;
     }

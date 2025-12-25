@@ -8,7 +8,8 @@
     transition: all var(--transition-base);
 }
 
-.navigation.scrolled {
+.navigation.scrolled,
+.navigation.mobile-open {
     background: var(--glass-bg);
     backdrop-filter: blur(var(--glass-blur));
     -webkit-backdrop-filter: blur(var(--glass-blur));
